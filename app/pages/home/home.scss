@@ -1,3 +1,28 @@
 .home {
-  
+  .item-avatar {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 5%;
+    height: auto;
+    float: left;
+    margin: 0 0 0 0;
+  }
+  .BackgroundImage{
+    background: url(http://mygardeninsight.com/images/BG,_off_Black.png) no-repeat center center fixed;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size:contain;
+  }
+  .scroll-content{
+    background: url(http://mygardeninsight.com/images/BG,_off_Black.png) no-repeat center center fixed;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size:contain;
+  }
 }
+
+

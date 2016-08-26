@@ -19,18 +19,19 @@
   </div>
 
   <ion-list-header *ngIf="zipCodeRefresh">
-    Current Weather for {{zipCode}}
+    Weather lookup for <b>{{zipCode}}</b>
   </ion-list-header>
     <ion-card *ngIf="weatherData">
       <ion-card-header *ngIf="weatherData">
-        Current Conditions for <b>{{weatherData.current_observation.display_location.full}}</b><br/>
-        Weather Station location: <b>{{weatherData.current_observation.observation_location.city}}</b><br/>
-        Current Temp: <b>{{weatherData.current_observation.temp_f}}f</b>
+        Current Conditions for <b>{{weatherData.current_observation.display_location.full}}</b><br>
       </ion-card-header>
-      <ion-card-content>
-        <!--Current Temp: {{weatherData.current_observation.temp_f}}f
-        General Conditions: {{weatherData.current_observation.weather}}
-        Time: {{weatherData.current_observation.local_time_rfc822}} {{weatherData.current_observation.local_tz_short}}-->
+      <ion-card-content class="item-text-wrap">
+        <img class="item-avatar item"
+             src={{weatherData.current_observation.icon_url}}
+             alt={{weatherData.current_observation.icon}}><br>
+        &nbsp;{{weatherData.current_observation.weather}},
+        <b>{{weatherData.current_observation.temp_f}}f</b><br><br>
+        Station: <b>{{weatherData.current_observation.observation_location.city}}</b><br>
       </ion-card-content>
     </ion-card>
   <!--  <ion-list-header>
