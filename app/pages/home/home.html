@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>weather</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-list inset>
+    <ion-item>
+      <ion-label stacked>Zip Code</ion-label>
+      <ion-input [(ngModel)]="zipCode" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button block (click)="getWeatherConditionsByZip()">Search</button>
+  </div>
+
+  <ion-list-header>
+    Current Weather for {{zipCode}}
+  </ion-list-header>
+    <ion-card>
+      <ion-card-header>
+        Current Conditions
+      </ion-card-header>
+      <ion-card-content>
+        Current Temp: {{weatherData}}
+        <!--General Contidions: {{weatherData}}
+        Time: {{weatherData}} {{weatherData}}-->
+      </ion-card-content>
+    </ion-card>
+  <!--  <ion-list-header>
+      <ion-card>
+        <ion-card-header>
+          Current Weather for {{weatherData.observation_location.city}}
+        </ion-card-header>
+        <ion-card-content>
+          Current Temp: {{weatherData.temp_f}}
+          General Conditions: {{weatherData.weather}}
+          Time: {{weatherData.local_time_rfc822}} {{weatherData.local_tz_short}}
+        </ion-card-content>
+      </ion-card>
+    </ion-list-header>-->
+</ion-content>
