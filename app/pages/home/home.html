@@ -18,17 +18,19 @@
     <button block (click)="getWeatherConditionsByZip()">Search</button>
   </div>
 
-  <ion-list-header>
+  <ion-list-header *ngIf="zipCodeRefresh">
     Current Weather for {{zipCode}}
   </ion-list-header>
-    <ion-card>
-      <ion-card-header>
-        Current Conditions
+    <ion-card *ngIf="weatherData">
+      <ion-card-header *ngIf="weatherData">
+        Current Conditions for <b>{{weatherData.current_observation.display_location.full}}</b><br/>
+        Weather Station location: <b>{{weatherData.current_observation.observation_location.city}}</b><br/>
+        Current Temp: <b>{{weatherData.current_observation.temp_f}}f</b>
       </ion-card-header>
       <ion-card-content>
-        Current Temp: {{weatherData}}
-        <!--General Contidions: {{weatherData}}
-        Time: {{weatherData}} {{weatherData}}-->
+        <!--Current Temp: {{weatherData.current_observation.temp_f}}f
+        General Conditions: {{weatherData.current_observation.weather}}
+        Time: {{weatherData.current_observation.local_time_rfc822}} {{weatherData.current_observation.local_tz_short}}-->
       </ion-card-content>
     </ion-card>
   <!--  <ion-list-header>

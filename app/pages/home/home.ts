@@ -9,6 +9,7 @@ import { WeatherService } from '../../services/weatherservice';
 export class HomePage {
   public weatherData;
   public zipCode;
+  public zipCodeRefresh;
 
   constructor(private navCtrl: NavController,
               private weatherService: WeatherService) {
@@ -24,9 +25,11 @@ export class HomePage {
       () => {
         console.log('get weather data for (' + this.zipCode + ') completed');
         console.log('data: ', JSON.stringify(this.weatherData,null,2));
+        this.zipCodeRefresh = true;
       }
     );
   }
+
 
   // wunderground api
   // GET http://api.wunderground.com/api/515e332c1f08c7a3/features/settings/q/query.format
