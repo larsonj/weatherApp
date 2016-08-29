@@ -23,7 +23,7 @@ export class WeatherService {
 
   getWeatherForecastByZip(zipCode) {
     let weatherForecast =
-      this.http.get(`http://api.wunderground.com/api/515e332c1f08c7a3/conditions/q/${zipCode}/.json`);
+      this.http.get(`http://api.wunderground.com/api/515e332c1f08c7a3/forecast/q/${zipCode}/.json`);
     return weatherForecast;
   }
 

@@ -10,9 +10,12 @@ export class HomePage {
   public weatherData;
   public zipCode;
   public zipCodeRefresh;
+  public weatherForecast;
+  public weatherForecastPeriods;
 
   constructor(private navCtrl: NavController,
               private weatherService: WeatherService) {
+
   }
 
   getWeatherConditionsByZip() {
@@ -23,9 +26,26 @@ export class HomePage {
       },
       err => console.error(err),
       () => {
-        console.log('get weather data for (' + this.zipCode + ') completed');
+        console.log('get weather CONDITIONS for (' + this.zipCode + ') completed');
         console.log('data: ', JSON.stringify(this.weatherData,null,2));
         this.zipCodeRefresh = true;
+      }
+    );
+  }
+
+  getWeatherForecastByZip() {
+    this.weatherService.getWeatherForecastByZip(this.zipCode).subscribe(
+      data => {
+        this.weatherForecast = data.json();
+        this.weatherForecastPeriods=this.weatherForecast.forecast.txt_forecast.forecastday;
+      },
+      err => console.error(err),
+      () => {
+        this.zipCodeRefresh = true;
+        console.log('get weather FORECAST for (' + this.zipCode + ') completed');
+        console.log('data: ', JSON.stringify(this.weatherForecast,null,2));
+        console.log('get weather FORECAST PERIODS for (' + this.zipCode + ') completed');
+        console.log('data: ', JSON.stringify(this.weatherForecastPeriods,null,2));
       }
     );
   }

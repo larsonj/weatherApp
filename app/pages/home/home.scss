@@ -4,16 +4,31 @@
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    width: 100%;
+    width: 70%;
     height: auto;
-/*    float: right;*/
+    /*    float: right;*/
     margin: 0;
+  }
+  .forecast-avatar {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 50%;
+    height: auto;
+    float: top;
+    margin: 0;
+    font-size: 55%;
   }
   .font70 {
     font-size: 70%;
   }
   .font50 {
     font-size: 50%;
+  }
+  .forecast {
+    font-size: 80%;
+    word-wrap: break-word;
   }
 
   .BackgroundImage{

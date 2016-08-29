@@ -15,7 +15,7 @@
   </ion-list>
 
   <div padding>
-    <button block (click)="getWeatherConditionsByZip()">Search</button>
+    <button block (click)="getWeatherConditionsByZip(); getWeatherForecastByZip()">Search</button>
   </div>
 
   <ion-list-header *ngIf="zipCodeRefresh">
@@ -23,7 +23,8 @@
   </ion-list-header>
     <ion-card *ngIf="weatherData">
       <ion-card-header *ngIf="weatherData">
-        Location <b>{{weatherData.current_observation.display_location.full}}</b><br>
+        Current Conditions<br>
+        <b>City {{weatherData.current_observation.display_location.full}}</b><br>
         <span class="font70">({{weatherData.current_observation.local_time_rfc822}} {{weatherData.current_observation.local_tz_short}})</span><br>
       </ion-card-header>
       <ion-card-content class="item-text-wrap">
@@ -37,29 +38,35 @@
             <ion-col width-90>
               <br>
               &nbsp;{{weatherData.current_observation.weather}},
-              <b>{{weatherData.current_observation.temperature_string}}, feels like {{weatherData.current_observation.feelslike_string}}</b>
+              <b>{{weatherData.current_observation.temperature_string}}</b>
             </ion-col>
           </ion-row>
         </ion-grid>
 
         Humidity: <b>{{weatherData.current_observation.relative_humidity}}</b><br>
+        Feels like: <b>{{weatherData.current_observation.feelslike_string}}</b><br>
         Wind: <b>{{weatherData.current_observation.wind_string}}</b><br>
         Visibility: <b>{{weatherData.current_observation.visibility_mi}} mi, {{weatherData.current_observation.visibility_km}} km</b><br><br>
 
         Precipitation:
         Station: <b>{{weatherData.current_observation.observation_location.city}} <span class="font70">({{weatherData.current_observation.station_id}})</span></b><br>
-      </ion-card-content>
+      </ion-card-content >
+
     </ion-card>
-  <!--  <ion-list-header>
-      <ion-card>
-        <ion-card-header>
-          Current Weather for {{weatherData.observation_location.city}}
-        </ion-card-header>
-        <ion-card-content>
-          Current Temp: {{weatherData.temp_f}}
-          General Conditions: {{weatherData.weather}}
-          Time: {{weatherData.local_time_rfc822}} {{weatherData.local_tz_short}}
-        </ion-card-content>
-      </ion-card>
-    </ion-list-header>-->
+
+  <ion-card>
+    <ion-list>
+      <ion-item *ngIf="weatherForecastPeriods"><b>3 Day Forecast</b></ion-item>
+      <ion-item *ngFor="let forecastPeriod of weatherForecastPeriods">
+        <span class="forecast">{{forecastPeriod.fcttext}}</span>
+        <ion-note item-right>
+          <img class="forecast-avatar item"
+               src={{forecastPeriod.icon_url}}
+               alt={{forecastPeriod.icon}}><br>
+          {{forecastPeriod.title}}
+        </ion-note>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
 </ion-content>
