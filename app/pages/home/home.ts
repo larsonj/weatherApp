@@ -30,14 +30,4 @@ export class HomePage {
     );
   }
 
-
-  // wunderground api
-  // GET http://api.wunderground.com/api/515e332c1f08c7a3/features/settings/q/query.format
-  /*
-
-   http://api.wunderground.com/api/515e332c1f08c7a3/conditions/q/10011/.json
-   http://api.wunderground.com/api/515e332c1f08c7a3/conditions/q/07701/.json
-   */
-
-
 }

@@ -18,11 +18,12 @@ var WeatherService = (function () {
         this.http = http;
     }
     WeatherService.prototype.getWeatherConditionsByZip = function (zipCode) {
-        var weatherConditions = this.http.get("http://api.wunderground.com/api/515e332c1f08c7a3/conditions/q/10011/.json");
+        var weatherConditions =
+          this.http.get("http://api.wunderground.com/api/515e332c1f08c7a3/conditions/q/10011/.json");
         return weatherConditions;
     };
     WeatherService = __decorate([
-        core_1.Injectable(), 
+        core_1.Injectable(),
         __metadata('design:paramtypes', [http_1.Http])
     ], WeatherService);
     return WeatherService;
