@@ -45,20 +45,6 @@
     vertical-align: middle !important;
     text-align: center !important;
   }
-  .BackgroundImage{
-    background: url(http://mygardeninsight.com/images/BG,_off_Black.png) no-repeat center center fixed;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size:contain;
-  }
-  .scroll-content{
-    background: url('C:\Users\jl\gh\ionic2\weatherApp\www\build\img\fon-listya-37401.png') no-repeat center center fixed;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size:contain;
-  }
   div .item-inner {
     color: black;
   }
@@ -75,23 +61,41 @@ SEE: http://jxnblk.com/colorable/demos/text/?background=%23333333&foreground=%23
     /*fall back*/
     background-color: #333333;
     color: #FFF8A8; /* #FF00C4;*/
-    /* add opacity for browsers that support it*/
-    background-color: rbga(51, 51, 51, 0.6);
-    /*opacity: .85;*/
+    /* add opacity via rbga for browsers that support it*/
+    /*background-color: rbga(51, 51, 51, 0.6);*/
+    opacity: .85;
     /*    mix-blend-mode: lighten;*/
   }
+
+  /*
+      .BackgroundImage{
+      background: url(http://mygardeninsight.com/images/BG,_off_Black.png) no-repeat center center fixed;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size:contain;
+    }
+    .scroll-content{
+      background: url('C:\Users\jl\gh\ionic2\weatherApp\www\build\img\fon-listya-37401.png') no-repeat center center fixed;
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size:contain;
+    }
+    */
+
 }  /* .home */
+
 .scroll-bg{
-  background: url('../../build/img/rain-above-forest-b&w-1334px.png') no-repeat center center fixed;
+  background: url('../../img/drawable-port-xxxhdpi-screen.png') no-repeat center center fixed;
   background-size: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   /*opacity: .8;*/
-/*  background-blend-mode: darken;
+  /*background-blend-mode: darken;
   background-color: black;*/
-
 }
 .homeStyle {
   background-color: #00ff00;
@@ -100,6 +104,4 @@ SEE: http://jxnblk.com/colorable/demos/text/?background=%23333333&foreground=%23
   /*background-color: transparent;*/
   color: lightgray;
 }
-
-
 

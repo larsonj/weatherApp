@@ -15,6 +15,9 @@ plugins/
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+.idea/dbnavigator.xml
+.idea/jenkinsSettings.xml
+.idea/.idea
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
@@ -23,8 +26,6 @@ plugins/
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
-
-.idea/.idea
 
 # Gradle:
 .idea/gradle.xml
@@ -52,3 +53,4 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+/resources/splash.bak.png
