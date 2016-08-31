@@ -4,21 +4,24 @@
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    width: 70%;
+    width: 100%;
     height: auto;
-    /*    float: right;*/
-    margin: 0;
+    /*float: top;*/
+    margin: 0 auto;
   }
   .forecast-avatar {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    width: 50%;
+    width: 100% !important;
     height: auto;
-    float: top;
-    margin: 0;
-    font-size: 55%;
+    /*float: top;*/
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 100% !important;
+    word-wrap: break-word;
   }
   .font70 {
     font-size: 70%;
@@ -27,10 +30,21 @@
     font-size: 50%;
   }
   .forecast {
-    font-size: 80%;
-    word-wrap: break-word;
+    font-size: 100%;
+    offset-before: 4px;
+/*    word-wrap: break-word;*/
   }
-
+  ion-row {
+    border-bottom-style: solid;
+    border-color: darkcyan;
+    border-top-style: solid;
+    border-collapse: separate;
+    border-width: thin;
+  }
+  .cond-icon-col {
+    vertical-align: middle !important;
+    text-align: center !important;
+  }
   .BackgroundImage{
     background: url(http://mygardeninsight.com/images/BG,_off_Black.png) no-repeat center center fixed;
     -webkit-background-size: contain;
@@ -39,12 +53,53 @@
     background-size:contain;
   }
   .scroll-content{
-    background: url(http://mygardeninsight.com/images/BG,_off_Black.png) no-repeat center center fixed;
+    background: url('C:\Users\jl\gh\ionic2\weatherApp\www\build\img\fon-listya-37401.png') no-repeat center center fixed;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size:contain;
   }
+  div .item-inner {
+    color: black;
+  }
+
+/*
+HIGH CONTRAST COLORS
+   BG  ,  COLOR
+#222233, #29FF3E
+#333333, #FFF8A8
+
+SEE: http://jxnblk.com/colorable/demos/text/?background=%23333333&foreground=%23FFF8A8
+*/
+  .weather-results {
+    /*fall back*/
+    background-color: #333333;
+    color: #FFF8A8; /* #FF00C4;*/
+    /* add opacity for browsers that support it*/
+    background-color: rbga(51, 51, 51, 0.6);
+    /*opacity: .85;*/
+    /*    mix-blend-mode: lighten;*/
+  }
+}  /* .home */
+.scroll-bg{
+  background: url('../../build/img/rain-above-forest-b&w-1334px.png') no-repeat center center fixed;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*opacity: .8;*/
+/*  background-blend-mode: darken;
+  background-color: black;*/
+
 }
+.homeStyle {
+  background-color: #00ff00;
+}
+.ltGrey {
+  /*background-color: transparent;*/
+  color: lightgray;
+}
+
 
 

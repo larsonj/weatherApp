@@ -18,6 +18,8 @@ export class HomePage {
 
   }
 
+  // todo: fu D3 charts https://github.com/mhartington/ionicv2-c3js
+
   getWeatherConditionsByZip() {
     this.weatherService.getWeatherConditionsByZip(this.zipCode).subscribe(
       data => {

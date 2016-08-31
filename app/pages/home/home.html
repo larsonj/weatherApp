@@ -1,58 +1,110 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Weather Teather</ion-title>
+  <ion-navbar ionNavBarBkgndColor>
+    <ion-title>Weather Tether</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding class="home">
+<ion-content padding class="home scroll-bg">
   <ion-list inset>
-    <ion-item>
+    <ion-item *ngIf!="weatherData">
       <ion-label stacked>Zip Code</ion-label>
       <ion-input [(ngModel)]="zipCode" type="text"></ion-input>
     </ion-item>
   </ion-list>
 
-  <div padding>
+  <div padding *ngIf!="weatherData">
     <button block (click)="getWeatherConditionsByZip(); getWeatherForecastByZip()">Search</button>
   </div>
 
-  <ion-list-header *ngIf="zipCodeRefresh">
-    Weather lookup for <b>{{zipCode}}</b>
+  <ion-list-header *ngIf="zipCodeRefresh" class="weather-results">
+    Weather for <b>{{zipCode}}</b>
   </ion-list-header>
-    <ion-card *ngIf="weatherData">
-      <ion-card-header *ngIf="weatherData">
-        Current Conditions<br>
-        <b>City {{weatherData.current_observation.display_location.full}}</b><br>
-        <span class="font70">({{weatherData.current_observation.local_time_rfc822}} {{weatherData.current_observation.local_tz_short}})</span><br>
-      </ion-card-header>
-      <ion-card-content class="item-text-wrap">
-        <ion-grid>
-          <ion-row>
-            <ion-col width-10>
-              <img class="item-avatar item"
-                   src={{weatherData.current_observation.icon_url}}
-                   alt={{weatherData.current_observation.icon}}><br>
-            </ion-col>
-            <ion-col width-90>
-              <br>
-              &nbsp;{{weatherData.current_observation.weather}},
-              <b>{{weatherData.current_observation.temperature_string}}</b>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
 
-        Humidity: <b>{{weatherData.current_observation.relative_humidity}}</b><br>
-        Feels like: <b>{{weatherData.current_observation.feelslike_string}}</b><br>
-        Wind: <b>{{weatherData.current_observation.wind_string}}</b><br>
-        Visibility: <b>{{weatherData.current_observation.visibility_mi}} mi, {{weatherData.current_observation.visibility_km}} km</b><br><br>
+  <ion-card *ngIf="weatherData" class="weather-results">
+    <ion-card-header *ngIf="weatherData" class="weather-results">
+      Current Conditions<br>
+      <b>City {{weatherData.current_observation.display_location.full}}</b><br>
+      <span class="font70">({{weatherData.current_observation.local_time_rfc822}} {{weatherData.current_observation.local_tz_short}})</span><br>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col width-33 class="cond-icon-col">
+            <img class="item-avatar"
+                 src={{weatherData.current_observation.icon_url}}
+                 alt={{weatherData.current_observation.icon}}><br>
+          </ion-col>
+          <ion-col width-66 wrap class="obsver-align">
+            <br>
+            &nbsp;{{weatherData.current_observation.weather}},
+            <b>{{weatherData.current_observation.temperature_string}}</b>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-        Precipitation:
-        Station: <b>{{weatherData.current_observation.observation_location.city}} <span class="font70">({{weatherData.current_observation.station_id}})</span></b><br>
-      </ion-card-content >
+      Humidity: <b>{{weatherData.current_observation.relative_humidity}}</b><br>
+      Feels like: <b>{{weatherData.current_observation.feelslike_string}}</b><br>
+      Wind: <b>{{weatherData.current_observation.wind_string}}</b><br>
+      Visibility: <b>{{weatherData.current_observation.visibility_mi}} mi, {{weatherData.current_observation.visibility_km}} km</b><br><br>
 
-    </ion-card>
+      Precipitation:
+      Station: <b>{{weatherData.current_observation.observation_location.city}} <span class="font70">({{weatherData.current_observation.station_id}})</span></b><br>
+    </ion-card-content >
+
+  </ion-card>
+
+
+  <ion-card *ngIf="weatherForecastPeriods" class="weather-results">
+    <ion-card-header class="weather-results">
+      <b>3 Day Forecast</b>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-grid class="weather-results">
+
+        <ion-row *ngFor="let forecastPeriod of weatherForecastPeriods" wrap center item-divider>
+          <ion-col width-20 class="forecast-avatar">
+            <img class="forecast-avatar"
+                 src={{forecastPeriod.icon_url}}
+                 alt={{forecastPeriod.icon}}>
+          </ion-col>
+          <ion-col width-75>
+            <strong>{{forecastPeriod.title}}</strong><br>
+            <span class="forecast" wrap>{{forecastPeriod.fcttext}}</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
+<!--
+
+  <ion-card>
+    <ion-card-header *ngIf="weatherForecastPeriods">
+      <b>3 Day Forecast</b>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row *ngFor="let forecastPeriod of weatherForecastPeriods"> &lt;!&ndash; todo: class="row" wrap &ndash;&gt;
+          <ion-column width-90>
+            <span class="forecast">{{forecastPeriod.fcttext}}</span>
+          </ion-column>
+          <ion-column width-10 class="forecast-avatar">
+            <img class="forecast-avatar item"
+                 src={{forecastPeriod.icon_url}}
+                 alt={{forecastPeriod.icon}}><br>
+            {{forecastPeriod.title}}
+          </ion-column>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+-->
+
+<!--
 
   <ion-card>
     <ion-list>
@@ -69,4 +121,5 @@
     </ion-list>
   </ion-card>
 
+-->
 </ion-content>

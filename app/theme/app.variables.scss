@@ -26,10 +26,30 @@
 // are different per mode.
 
 $colors: (
-  primary:    #387ef5,
+  primary:    #387ef5, // #387ef5,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  favorite:   #69BB7B
+  favorite:   #69BB7B,
+  ionNavBarBkgndColor: #228b22
 );
+
+/*
+$background-ios-color: #000;
+$background-md-color: #000;
+$background-wp-color: #000;
+
+$label-ios-text-color: #228b22;
+$label-md-text-color: #228b22;
+$label-wp-text-color: #228b22;
+
+$text-input-ios-background-color: #e6e6e6;
+$text-input-md-background-color: #e6e6e6;
+$text-input-wp-background-color: #e6e6e6;
+
+$searchbar-ios-input-background-color: #e6e6e6;
+$searchbar-md-input-background-color: #e6e6e6;
+$searchbar-wp-input-background-color: #e6e6e6;
+
+*/
