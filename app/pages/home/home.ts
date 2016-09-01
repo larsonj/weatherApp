@@ -13,6 +13,9 @@ export class HomePage {
   public weatherForecast;
   public weatherForecastPeriods;
 
+  public thatWeatherData=this.weatherData;
+  public thatWeatherForecast=this.weatherForecast;
+
   constructor(private navCtrl: NavController,
               private weatherService: WeatherService) {
 
@@ -20,7 +23,7 @@ export class HomePage {
 
   // todo: fu D3 charts https://github.com/mhartington/ionicv2-c3js
 
-  getWeatherConditionsByZip() {
+  getWeatherConditionsByZip(thatWeatherData) {
     this.weatherService.getWeatherConditionsByZip(this.zipCode).subscribe(
       data => {
         this.weatherData = data.json();
@@ -35,7 +38,7 @@ export class HomePage {
     );
   }
 
-  getWeatherForecastByZip() {
+  getWeatherForecastByZip(thatWeatherForecast) {
     this.weatherService.getWeatherForecastByZip(this.zipCode).subscribe(
       data => {
         this.weatherForecast = data.json();

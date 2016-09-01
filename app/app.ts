@@ -19,5 +19,7 @@ export class MyApp {
     });
   }
 }
-
+console.log('app started');
 ionicBootstrap(MyApp);
+console.log('app ended');
+

@@ -49,14 +49,17 @@
       Wind: <b>{{weatherData.current_observation.wind_string}}</b><br>
       Visibility: <b>{{weatherData.current_observation.visibility_mi}} mi, {{weatherData.current_observation.visibility_km}} km</b><br><br>
 
-      Precipitation:
+      Precipitation Today: <b>{{weatherData.current_observation.precip_today_string}}</b><br>
+      <!--todo: add NOAA reference http://www.cpc.ncep.noaa.gov/products/stratosphere/uv_index/uv_info.shtml,
+                                   http://www.cpc.ncep.noaa.gov/products/stratosphere/uv_index/uv_information.shtml-->
+      UV Index:  <b>{{weatherData.current_observation.UV}}</b><br>
       Station: <b>{{weatherData.current_observation.observation_location.city}} <span class="font70">({{weatherData.current_observation.station_id}})</span></b><br>
     </ion-card-content >
 
   </ion-card>
 
 
-  <ion-card *ngIf="weatherForecastPeriods" class="weather-results">
+  <ion-card *ngIf="weatherForecastPeriods" c`lass="weather-results">
     <ion-card-header class="weather-results">
       <b>3 Day Forecast</b>
     </ion-card-header>
@@ -69,7 +72,7 @@
             <img class="forecast-avatar"
                  src={{forecastPeriod.icon_url}}
                  alt={{forecastPeriod.icon}}>
-          </ion-col>
+          </ion-col>`
           <ion-col width-75>
             <strong>{{forecastPeriod.title}}</strong><br>
             <span class="forecast" wrap>{{forecastPeriod.fcttext}}</span>
@@ -77,7 +80,7 @@
         </ion-row>
       </ion-grid>
 
-    </ion-card-content>
+    </ion-card-content>`
   </ion-card>
 
 <!--
