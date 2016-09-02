@@ -1,0 +1,42 @@
+<RestClientRequest>
+  <option name="biscuits">
+    <list />
+  </option>
+  <option name="httpMethod" value="GET" />
+  <option name="urlBase" value="http://www.ncdc.noaa.gov" />
+  <option name="urlPath" value="/cdo-web/api/v2/datasets" />
+  <option name="headers">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="Accept" />
+        <option name="value" value="*/*" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Cache-Control" />
+        <option name="value" value="no-cache" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="token" />
+        <option name="value" value="aGrQqEasNXtdesnXRlnLOESDyRASPpdd" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parameters">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="token" />
+        <option name="value" value="aGrQqEasNXtdesnXRlnLOESDyRASPpdd" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="datatypeid" />
+        <option name="value" value="TOBS" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parametersEnabled" value="false" />
+  <option name="haveTextToSend" value="false" />
+  <option name="haveFileToSend" value="false" />
+  <option name="isFileUpload" value="false" />
+  <option name="textToSend" value="" />
+  <option name="filesToSend" value="" />
+</RestClientRequest>
