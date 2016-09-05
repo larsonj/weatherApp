@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
-var weatherservice_1 = require('../../services/weatherservice');
+var weatherservice_1 = require('.././weatherservice');
 var HomePage = (function () {
     function HomePage(navCtrl, weatherService) {
         this.navCtrl = navCtrl;
@@ -26,7 +26,7 @@ var HomePage = (function () {
         core_1.Component({
             templateUrl: 'build/pages/home/home.html',
             providers: [weatherservice_1.WeatherService]
-        }), 
+        }),
         __metadata('design:paramtypes', [ionic_angular_1.NavController, weatherservice_1.WeatherService])
     ], HomePage);
     return HomePage;

@@ -8,3 +8,26 @@
 // App Shared Sass variables belong in app.variables.scss.
 
 @import "../pages/home/home";
+@import "../pages/settings/settings";
+@import "../pages/tabs/tabs";
+
+.scroll-bg{
+  /* photo credit: unsplash.com, Jonathan Bean, Oct 22, 2015, https://unsplash.com/photos/z6Quzi5HXV0 */
+  background: url('../../img/drawable-port-xxxhdpi-screen.png') no-repeat center center fixed;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*opacity: .8;*/
+  /*background-blend-mode: darken;
+  background-color: black;*/
+}
+.homeStyle {
+  background-color: #00ff00;
+}
+.ltGrey {
+  /*background-color: transparent;*/
+  color: lightgray;
+}
+

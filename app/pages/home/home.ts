@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { WeatherService } from '../../services/weatherservice';
+import { WeatherService } from '../../providers/weather-service';
 
 @Component({
   templateUrl: 'build/pages/home/home.html',
