@@ -22,6 +22,7 @@ export class HomePage {
   }
 
   // todo: fu D3 charts https://github.com/mhartington/ionicv2-c3js
+  // todo: update icons
 
   getWeatherConditionsByZip(thatWeatherData) {
     this.weatherService.getWeatherConditionsByZip(this.zipCode).subscribe(

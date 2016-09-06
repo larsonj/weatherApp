@@ -1,4 +1,6 @@
-https://forum.ionicframework.com/t/where-should-i-put-images/41463/7Notes regarding styling
+* fonts and weather icons - https://erikflowers.github.io/weather-icons/ 
+*                         - https://github.com/erikflowers/weather-icons
+* regarding styling - https://forum.ionicframework.com/t/where-should-i-put-images/41463/7Notes
 
 # background images
 

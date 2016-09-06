@@ -1,0 +1,98 @@
+/* These are icons to use during the night with Weather Underground's API */
+/* The Forecast Condition icons contain the prefix "nt_" for night forecasts */
+/* However, the Current Condition icon always contains icons for the day, */
+/* so for current condition, night icons need to be implemented programmatically */
+/* (i.e. check if current hour is between sunset and sunrise, check what moon phase we are in) */
+/* We use "nt_" and "nt_alt_" as prefixes in our program */
+
+/* --- neutral night icons for WU's "chance" --- */
+.wi-wu-nt_chanceflurries:before, .wi-wu-nt_alt_chanceflurries:before {
+  content: "\f064";
+}
+.wi-wu-nt_chancerain:before, .wi-wu-nt_alt_chancerain:before {
+  content: "\f019";
+}
+.wi-wu-nt_chancesleat:before, .wi-wu-nt_alt_chancesleat:before {
+  content: "\f0b5";
+}
+.wi-wu-nt_chancesnow:before, .wi-wu-nt_alt_chancesnow:before {
+  content: "\f01b";
+}
+.wi-wu-nt_chancetstorms:before, .wi-wu-nt_alt_chancetstorms:before {
+  content: "\f01e";
+}
+
+/* --- night icons for full moon phase --- */
+.wi-wu-nt_clear:before { /* no night-full moon available, using night-stars */
+  content: "\f077";
+}
+.wi-wu-nt_cloudy:before {
+  content: "\f031";
+}
+.wi-wu-nt_flurries:before {
+  content: "\f038";
+}
+.wi-wu-nt_fog:before { /* no full moon night-fog available, using neutral fog */
+  content: "\f014";
+}
+.wi-wu-nt_hazy:before { /* no full moon night-haze available, using neutral fog */
+  content: "\f014";
+}
+.wi-wu-nt_mostlycloudy:before {
+  content: "\f031";
+}
+.wi-wu-nt_partlycloudy:before {
+  content: "\f083";
+}
+.wi-wu-nt_sleet:before {
+  content: "\f0b3";
+}
+.wi-wu-nt_rain:before {
+  content: "\f036";
+}
+.wi-wu-nt_snow:before {
+  content: "\f038";
+}
+.wi-wu-nt_tstorms:before {
+  content: "\f03b";
+}
+
+/* --- night icons for other than full moon phase --- */
+.wi-wu-nt_alt_clear:before {
+  content: "\f02e";
+}
+.wi-wu-nt_alt_cloudy:before {
+  content: "\f086";
+}
+.wi-wu-nt_alt_flurries:before {
+  content: "\f067";
+}
+.wi-wu-nt_alt_fog:before {
+  content: "\f04a";
+}
+.wi-wu-nt_alt_hazy:before { /* no night-alt-haze available, using night-alt-fog*/
+  content: "\f04a";
+}
+.wi-wu-nt_alt_mostlycloudy:before {
+  content: "\f086";
+}
+.wi-wu-nt_alt_partlycloudy:before {
+  content: "\f081";
+}
+.wi-wu-nt_alt_sleet:before {
+  content: "\f0b4";
+}
+.wi-wu-nt_alt_rain:before {
+  content: "\f028";
+}
+.wi-wu-nt_alt_snow:before {
+  content: "\f02a";
+}
+.wi-wu-nt_alt_tstorms:before {
+  content: "\f02d";
+}
+
+/* fog icon seems missing */
+.wi-wu-fog:before {
+  content: "\f003";
+}
