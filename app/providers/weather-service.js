@@ -5,26 +5,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 /**
  * Created by jl on 8/26/2016.
  */
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
 var WeatherService = (function () {
     function WeatherService(http) {
         this.http = http;
     }
     WeatherService.prototype.getWeatherConditionsByZip = function (zipCode) {
-        var weatherConditions =
-          this.http.get("http://api.wunderground.com/api/515e332c1f08c7a3/conditions/q/10011/.json");
+        var weatherConditions = this.http.get("http://api.wunderground.com/api/515e332c1f08c7a3/conditions/q/" + zipCode + "/.json");
         return weatherConditions;
     };
+    WeatherService.prototype.getWeatherAlmanacByZip = function (zipCode) {
+        var weatherAlmanac = this.http.get("http://api.wunderground.com/api/515e332c1f08c7a3/almanac/q/" + zipCode + "/.json");
+        return weatherAlmanac;
+    };
+    WeatherService.prototype.getWeatherForecastByZip = function (zipCode) {
+        var weatherForecast = this.http.get("http://api.wunderground.com/api/515e332c1f08c7a3/forecast/q/" + zipCode + "/.json");
+        return weatherForecast;
+    };
     WeatherService = __decorate([
-        core_1.Injectable(),
-        __metadata('design:paramtypes', [http_1.Http])
+        core_1.Injectable()
     ], WeatherService);
     return WeatherService;
 }());
