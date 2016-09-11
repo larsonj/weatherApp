@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ionic serve -cs" type="PhoneGap" factoryName="PhoneGap/Cordova">
-    <option name="myExecutable" value="C:\Users\jcl\AppData\Roaming\npm\ionic.cmd" />
+    <option name="myExecutable" value="/usr/local/bin/ionic" />
     <option name="myWorkDir" value="$PROJECT_DIR$" />
     <option name="myCommand" value="serve" />
     <option name="myPassParent" value="true" />
