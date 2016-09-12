@@ -10,6 +10,7 @@ export class HomePage {
   public weatherData;
   public zipCode;
   public zipCodeRefresh;
+  public refreshZipCodeQuery;
   public weatherForecast;
   public weatherForecastPeriods;
 
@@ -34,6 +35,7 @@ export class HomePage {
         console.log('get weather CONDITIONS for (' + this.zipCode + ') completed');
         console.log('data: ', JSON.stringify(this.weatherData,null,2));
         this.zipCodeRefresh = true;
+        this.refreshZipCodeQuery = true;
       }
     );
   }
@@ -47,6 +49,7 @@ export class HomePage {
       err => console.error(err),
       () => {
         this.zipCodeRefresh = true;
+        this.refreshZipCodeQuery = true;
         console.log('get weather FORECAST for (' + this.zipCode + ') completed');
         console.log('data: ', JSON.stringify(this.weatherForecast,null,2));
         console.log('get weather FORECAST PERIODS for (' + this.zipCode + ') completed');
