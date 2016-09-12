@@ -1,19 +1,20 @@
 import { Component, ViewChild } from '@angular/core';
-import { ionicBootstrap, Platform, Nav } from 'ionic-angular';
+import { App, ionicBootstrap, Platform, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import { TabsPage } from './pages/tabs/tabs';
+
 import { HomePage } from './pages/home/home';
 
 @Component({
-  //template: '<ion-nav [root]="rootPage"></ion-nav>'
+  template: '<ion-nav [root]="rootPage"></ion-nav>',
   templateUrl: './build/app.html'
 })
 export class WeatherTether {
-  @ViewChild(Nav) nav:Nav;
+  @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage; // todo: set HomePage
+  rootPage: any = TabsPage; // todo: set HomePage
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any}>
 
   constructor(public platform: Platform) {
     this.initializeApp();
