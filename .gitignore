@@ -33,6 +33,9 @@ app/**/*-spec.js
 .idea/dynamic.xml
 .idea/uiDesigner.xml
 
+.idea/markdown-navigator.xml
+.idea/markdown-navigator/
+
 # Gradle:
 .idea/gradle.xml
 .idea/libraries
