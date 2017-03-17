@@ -20,6 +20,8 @@ app/pages/**/*.html
 .idea/dbnavigator.xml
 .idea/jenkinsSettings.xml
 .idea/jsLibraryMappings.xml
+.idea/markdown-navigator
+.idea/markdown-navigator.xml
 
 
 .idea/.idea
@@ -59,4 +61,3 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 /resources/splash.bak.png
-/ionic.config.json
